@@ -1,19 +1,19 @@
-e = input("Enter a equation")
-n1 = float(e[0])
-o = (e[1])
-n2 = float(e[2])
+equation = input("Enter a equation")
+n1 = float(equation[0])
+operation = (equation[1])
+n2 = float(equation[2])
 
-if o == "*":
+if operation == "*":
     print("The Result " + str(n1*n2))
     
-if o == "/":
+if operation == "/":
     print("The Result "+ str(n1/n2))
 
-if o == "+":
+if operation == "+":
     print("The Result "+ str(n1+n2))
 
-if o == "-":
+if operation == "-":
     print("The Result "+ str(n1-n2))
 
-if o == "%":
+if operation == "%":
     print("The Result "+ str(n1%n2))

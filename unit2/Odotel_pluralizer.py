@@ -1,22 +1,23 @@
-nu= input("Enter a Number ")
-n = input("Enter a noun ")
+
+number = input("Enter a Number ")
+noun = input("Enter a noun ")
 if nu=="1":
- print(nu+" "+ n)
+ print(number +" "+ noun)
 elif n[-2:]=="ay":
-    print(nu +" "+ n+ "s")
+    print(number +" "+ noun + "s")
 elif n[-2:]== "oy":
-    print(nu +" "+ n+ "s")
+    print(number +" "+ noun + "s")
 elif n[-2:]=="ey":
-    print(nu +" "+ n+ "s")
+    print(number +" "+ noun + "s")
 elif n[-2:]=="uy":
-    print(nu +" "+ n+ "s")
+    print(number +" "+ noun + "s")
 elif n[-2:]=="fe":
-    print(nu +" "+ n[0:-2]+"ves")
+    print(number +" "+ noun[0:-2] +"ves")
 elif n[-1:]=="y":
-    print(nu +" "+ n[0:-1]+ "ies")
+    print(number +" "+ noun[0:-1] + "ies")
 elif n[-2:]=="sh":
-    print(nu +" "+ n+ "es")
+    print(number +" "+ noun + "es")
 elif n[-2:]== "us":
-    print(nu +" "+ n[0:-2]+ "i")
+    print(number+" "+ noun[0:-2] + "i")
 else: 
-    print(nu +" "+n + "s")
+    print(number +" " + noun + "s")
