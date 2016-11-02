@@ -1,10 +1,16 @@
 import random
 
-PcNum =  random.randint(1,101)
-UserNum = int(input("Enter a Random Number:"))
+PcNum =  random.randint(1,100)
+UserNum = int(input("Enter a Random Number: "))
+NumCount = 1
 
 while UserNum != PcNum:
-    print("You Are " + str( PcNum - UserNum ) + " Away")
-    UserNum = int(input("Enter a Number:"))
+    NumCount = NumCount + 1
+    if UserNum > PcNum:
+        print("You're too high")
+        UserNum = int(input("Enter a Number: "))
+    elif UserNum < PcNum:
+        print("You're too low")
+        UserNum = int(input("Enter a Number: "))
     
-print("You got the Number Correct XD!!!!")
+print("You got the Number " +"\n You tried to guess the number " + str(NumCount) + " times")
