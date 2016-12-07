@@ -32,7 +32,7 @@ def get_rounds():
     #code here
     rounds_amount = int(input("How Much Rounds you want? From 1 to 9 rounds "))
     while rounds_amount <= 9:
-    return rounds_amount
+        return rounds_amount
 #function name: get_round_winner
 #   arguments: player move, computer move
 #   purpose: based on the player and computer's move, determine
@@ -41,11 +41,26 @@ def get_rounds():
 #               "player" if player won
 #               "comp" if computer won
 #               "tie" if it's a tie
-def get_round_winner(p1move, cmove):
+def get_round_winner(p1_move, com_move):
     #code here
-    if p1_move == com_move:
-        print("Tie")
-    elif p1_move == "r" and com_move == 
+    if p1_move == "r" and com_move == "r":
+        return("Tie")
+    elif p1_move == "r" and com_move == "s":
+        return("Player Won!")
+    elif p1_move == "r" and com_move == "p":
+        return("Computer Won!")
+    elif p1_move == "s" and com_move == "s":
+        return("Tie!")
+    elif p1_move == "s" and com_move == "r":
+        return("Computer Won!") 
+    elif p1_move == "s" and com_move == "p":
+        return("Player Won!")
+    elif p1_move == "p" and com_move == "p":
+        return("Tie!")
+    elif p1_move == "p" and com_move == "s":
+        return("Computer Won!")
+    elif p1_move == "p" and com_move == "r":
+        return("Player Won!")
         
 #functionname: get_full_move
 #   arguments: a single letter move 'r','p', or 's'
@@ -56,13 +71,19 @@ def get_round_winner(p1move, cmove):
 #               "Scissors" if given "s"
 def get_full_move(shortmove):
     #code here
-
+    if shortmove == "r":
+        print("Player Picked Rock!")
+    elif shortmove == "s":
+        print("Player Picked Scissors!")
+    elif shortmove == "p":
+        print("Player Picked Paper!")
+        
 #function name: print_score
 #   arguments: player score, computer score, number of ties
 #   purpose: prints the scoreboard
 #   returns: none
 def print_score(pscore, cscore, ties):
-    #code here
+    print ("PLayer 1 has {} points \nComputer has {} points \nYou both tied {} times".format(pscore, cscore, ties))
 
 #function name: rps
 #   arguments: none
@@ -70,14 +91,24 @@ def print_score(pscore, cscore, ties):
 #               all the other functions to create RPS
 #   returns: none
 def rps():
-    #code here
+    score_player1 = 0
+    score_comp = 0
+    tie = 0
+    rounds = get_rounds()
+    for d in range(rounds):
+        p1_move = get_p1_move()
+        com_move = get_comp_move()
+        winner = get_round_winner(p1_move,com_move)
+        print(winner)
+    
+    
 
 #function name: tests
 #   arguments: none
 #   purpose: a place for you to write your tests.  replace 'rps' below
 #               with 'tests' to run this function instead of the game loop
 #   returns: none
-def test():
+
     #code here
 
 rps()
