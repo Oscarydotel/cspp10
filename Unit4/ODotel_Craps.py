@@ -15,11 +15,12 @@ def DICEroll():
     print("Your Roll are:\nDice Uno {} !\nDice Dos {}!\nTotal is {} !" .format(dice_uno,dice_dos,dice_add))
     return dice_add
     
-def PHASE_UNO(player_Dinero):
-     player_cash = player_Dinero
-     Dinero_amount = int(input("Enter amount of bet!\n Bet can not be negative \n (2)Must not be more of what you bet \n(3)Must only be whole numbers "))
-     if Dinero_amount > player_cash or Dinero_amount <= 0:
-         Dinero_amount = int(("You betted wrong"))
+def PHASE_UNO():
+     player_cash = Player_Dinero()
+     Dinero_amount = int(input("Enter amount of bet!\n--RULES FOR A CORRECT BET--\n(1)Bet can not be negative \n(2)Must not be more of what you bet \n(3)Must only be whole numbers\n(4)Must obvious ONLY NUMBERS\n\n\nENTER BET HERE:"))
+     while Dinero_amount > player_cash or Dinero_amount <= 0:
+         print("You bet a wrong number!\nTry again!")
+         Dinero_amount = int(input("Enter a correct amount of money for a bet\nPlease READ what is allowed for a CORRECT BET ABOVE!!!\nPlease try again: "))
      return Dinero_amount
  
 def PHASE_DOS():
@@ -48,8 +49,11 @@ def PHASE_TRES():
      if dice_add_Ph3 == 7:
          return "Lost"
      elif dice_add_Ph3 == point_num:
-         return "Won"
+        return "Won"
 
-Intro = input("Hello welcome to craps !!\nWhat is you name?:")
-DICEroll()
+print("Casino Royal")
+Player_name = input("What is your name Sir/Ma?\nMy name is ----- .")
+print("Welcome " + Player_name + " to craps!!")
+Player_Dinero()
+PHASE_UNO()
 PHASE_DOS()
