@@ -18,7 +18,7 @@ def DICEroll():
 def PHASE_UNO():
      player_cash = Player_Dinero()
      Dinero_amount = int(input("Enter amount of bet!\n--RULES FOR A CORRECT BET--\n(1)Bet can not be negative \n(2)Must not be more of what you have \n(3)Must only be whole numbers\n(4)Must obviously ONLY NUMBERS\n\n\nENTER BET HERE:"))
-     while Dinero_amount > player_cash or Dinero_amount <= 0:
+     if Dinero_amount > player_cash or Dinero_amount <= 0:
          print("You bet a wrong number!\nTry again!")
          Dinero_amount = int(input("Enter a correct amount of money for a bet\nPlease READ what is allowed for a CORRECT BET ABOVE!!!\nPlease try again: "))
      return Dinero_amount
@@ -26,15 +26,15 @@ def PHASE_UNO():
 def PHASE_DOS():
      dice_add = DICEroll()
      if dice_add == 2:
-        return "You lost"
+        print("You lost")
      elif dice_add == 3 :
-        return "You lost"
+        print("You lost")
      elif dice_add == 12 :
-        return "You lost"
+        print("You lost")
      elif dice_add == 7 :
-        return "You Won"
+        print("You Won")
      elif dice_add == 11 :
-        return "You Won"
+        print("You Won")
      else:
         return dice_add
 def PHASE_TRES():
@@ -42,14 +42,15 @@ def PHASE_TRES():
      dice_uno_Ph3 = random.randint(1,6)
      dice_dos_Ph3 = random.randint(1,6)
      dice_add_Ph3 = dice_uno_Ph3 + dice_dos_Ph3
-     while dice_add_Ph3 != 7 or dice_add_Ph3 != point_num:
-         dice_uno_Ph3 = random.randint(1,6)
-         dice_dos_Ph3 = random.randint(1,6)
-         dice_add_Ph3 = dice_uno_Ph3 + dice_dos_Ph3
-     if dice_add_Ph3 == 7:
-         print "Lost"
-     elif dice_add_Ph3 == point_num:
-         print "Won"
+     if point_num == 4 or point_num == 5 or point_num == 6 or point_num == 8 or point_num == 9 or point_num or 10:
+         while dice_add_Ph3 != 7 or dice_add_Ph3 != point_num:
+             dice_uno_Ph3 = random.randint(1,6)
+             dice_dos_Ph3 = random.randint(1,6)
+             dice_add_Ph3 = dice_uno_Ph3 + dice_dos_Ph3
+         if dice_add_Ph3 == 7:
+            print("Lost")
+         elif dice_add_Ph3 == point_num:
+            print("Won")
 
 def game():
     print("Casino Royale")
@@ -57,7 +58,8 @@ def game():
     
     while player_cash > 0:
         PHASE_UNO()
+        DICEroll()
         PHASE_DOS()
-        # PHASE_TRES()
-        
+        PHASE_TRES()
+       
 game()
