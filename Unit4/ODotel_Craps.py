@@ -1,9 +1,6 @@
 import random
 
-#Function name: Player_Dinero
-#purpose:this acts like a score board because the amount of money dettermines if the player can lose.. this keeps track of the money that is being used as a bet
-#argument:none
-#returns dinero
+
 def Player_Dinero():
     player_Dinero = 100
     return player_Dinero
@@ -23,33 +20,40 @@ def PHASE_UNO():
          Dinero_amount = int(input("Enter a correct amount of money for a bet\nPlease READ what is allowed for a CORRECT BET ABOVE!!!\nPlease try again: "))
      return Dinero_amount
  
-def PHASE_DOS():
-     dice_add = DICEroll()
+def PHASE_DOS(dice_add):
      if dice_add == 2:
-        print("You lost")
+        print("You Lost")
+        return "You lost"
      elif dice_add == 3 :
-        print("You lost")
+        print("You Lost")
+        return "You lost"
      elif dice_add == 12 :
-        print("You lost")
+        print("You Lost")
+        return "You lost"
      elif dice_add == 7 :
         print("You Won")
+        return "You Won"
      elif dice_add == 11 :
         print("You Won")
+        return "You Won"
      else:
         return dice_add
-def PHASE_TRES():
-     point_num = PHASE_DOS()
+def PHASE_TRES(dice_add):
+     point_num = dice_add
      dice_uno_Ph3 = random.randint(1,6)
      dice_dos_Ph3 = random.randint(1,6)
      dice_add_Ph3 = dice_uno_Ph3 + dice_dos_Ph3
      if point_num == 4 or point_num == 5 or point_num == 6 or point_num == 8 or point_num == 9 or point_num or 10:
-         while dice_add_Ph3 != 7 or dice_add_Ph3 != point_num:
+         if dice_add_Ph3 != 7 or dice_add_Ph3 != point_num:
              dice_uno_Ph3 = random.randint(1,6)
              dice_dos_Ph3 = random.randint(1,6)
              dice_add_Ph3 = dice_uno_Ph3 + dice_dos_Ph3
-         if dice_add_Ph3 == 7:
+         else:
+             
+
+          if dice_add_Ph3 == 7:
             print("Lost")
-         elif dice_add_Ph3 == point_num:
+          elif dice_add_Ph3 == point_num:
             print("Won")
 
 def game():
@@ -57,9 +61,10 @@ def game():
     player_cash = Player_Dinero()
     
     while player_cash > 0:
+        dice_add = DICEroll()
         PHASE_UNO()
         DICEroll()
-        PHASE_DOS()
-        PHASE_TRES()
+        PHASE_DOS(dice_add)
+        PHASE_TRES(dice_add)
        
 game()
