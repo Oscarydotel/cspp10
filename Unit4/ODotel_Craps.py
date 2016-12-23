@@ -36,8 +36,7 @@ def PHASE_DOS(dice_add):
      elif dice_add == 11 :
         print("You Won")
         return "You Won"
-     else:
-        return dice_add
+     
 def PHASE_TRES(dice_add):
      point_num = dice_add
      dice_uno_Ph3 = random.randint(1,6)
@@ -61,10 +60,11 @@ def game():
     player_cash = Player_Dinero()
     
     while player_cash > 0:
-        dice_add = DICEroll()
+        # dice_add = DICEroll()
+        dice_add = 8
         PHASE_UNO()
         DICEroll()
         PHASE_DOS(dice_add)
         PHASE_TRES(dice_add)
-       
+
 game()
