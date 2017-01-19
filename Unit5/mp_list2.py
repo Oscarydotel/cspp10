@@ -1,19 +1,18 @@
 #Worked With Cecilia  
 number_list = []
-user_input = input("Enter\nNumber\nSum\nClear\nPrint\nLenght\nor Exit\nPlease:  ")
-print(user_input)
-while user_input != "Exit" or user_input != "exit":
-    if user_input == "Clear":
+
+
+while True:
+    user_input = input("Enter\nNumber\nSum\nClear\nPrint\nLength\nor Exit Please:  ").lower()
+    if user_input == "clear":
         number_list = []
         print(number_list)
-    elif user_input == "Print":
+    elif user_input == "print":
         print(number_list)
-    elif user_input == "Length":
+    elif user_input == "length":
         print(len(number_list))
-    elif user_input == "Sum":
-        print(sum(user_input))
+    elif user_input == "sum":
+        print(sum(number_list))
     else:
-        user_input = int(user_input)
-        number_list.append(user_input)
-
+        number_list.append(int(user_input))
 
