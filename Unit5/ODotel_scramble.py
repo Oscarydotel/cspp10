@@ -7,7 +7,7 @@
 import random
 
 word = str(input("Enter A word "))
-words = str(input("Enter a WORDS"))
+words = str(input("Enter a WORDS :"))
 slic = words.split(" ")
 print(slic)
 print(word)
@@ -22,7 +22,8 @@ def scramble_word(word):
     word = "".join(lst)
     print(word)
     
+def scramble_phase(words):
     
     
-    
-scramble_word(word)
+
+scramble_word(word) 
